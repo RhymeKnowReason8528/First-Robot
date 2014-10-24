@@ -44,7 +44,7 @@ void initializeRobot()
   // Place code here to sinitialize servos to starting positions.
   // Sensors are automatically configured and setup by ROBOTC. They may need a brief time to stabilize.
 
-servo[goalGrabber] = 127;
+servo[goalGrabber] = 200;
 
   return;
 }
@@ -88,15 +88,15 @@ task main()
   motor[leftDrive] = 0;
   motor[rightDrive] = 0;
 
-  servo[goalGrabber] = 200;
+  servo[goalGrabber] = 150;
 
   nMotorEncoder[leftDrive] = 0;
   nMotorEncoder[rightDrive] = 0;
 
-  while(nMotorEncoder[leftDrive] < 720)
+  while(nMotorEncoder[leftDrive] < 600)
   {
-  	motor[rightDrive] = -50;
-  	motor[leftDrive] = 50;
+  	motor[rightDrive] = -75;
+  	motor[leftDrive] = 75;
   }
 
   motor[leftDrive] = 0;
@@ -110,6 +110,8 @@ task main()
   	motor[leftDrive] = 50;
   	motor[rightDrive] = 50;
   }
+  motor[rightDrive] = 0;
+  motor[leftDrive] = 0;
 
   ///////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////
